@@ -129,7 +129,7 @@ def update_decision_node_options(model1, model2, decision_node_name):
     model1_options = model1.variable(decision_node_name).labels()
     model2_options = model2.variable(decision_node_name).labels()
 
-    # Print the states of the decision node before updating
+    
     print(f"Options for decision node '{decision_node_name}' before updating: {model1_options}")
 
     missing_options = [option for option in model2_options if option not in model1_options]
@@ -192,7 +192,7 @@ def show_decision_utilities3(model):
         limid.makeInference()
         meu = limid.MEU()
 
-        # Assuming meu is a dictionary with a specific key for the expected utility value
+        
         expected_utility = meu.get('mean', float('-inf')) if isinstance(meu, dict) else meu
         state_utilities[state] = expected_utility
 
